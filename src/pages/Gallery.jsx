@@ -24,7 +24,7 @@ const Gallery = () => {
 
   return (
     <Box padding="30px 0" position="relative">
-      <Box width="600px" margin="auto" borderRadius="3px" overflow="hidden">
+      <Box width="600px" marginY="20" borderRadius="3px" overflow="hidden">
         <SimpleGrid columns={3} spacing={0}>
           {images.map((image, index) => (
             <Box
