@@ -1,20 +1,19 @@
-// src/theme.js
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
-  styles: {
-    global: {
-      "html, body": {
-        height: "100%",
-        margin: 0,
-        padding: 0,
-      },
-      "#root": {
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      },
+  colors: {
+    light: {
+      background: "#275E61",
+      text: "#000000",
     },
+    dark: {
+      background: "#1A202C",
+      text: "#FFFFFF",
+    },
+    fonts: {
+      body: "Merriweather, serif", 
+      heading: "Merriweather, serif", 
+    }
   },
 });
 

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Roper';
+  src: local('Roper Press Heavy'), local('Roper-Press-Heavy'),
+      url('../../public/Fonts/Roper-PressHeavy.woff2') format('woff2'),
+      url('../../public/Fonts/Roper-PressHeavy.woff') format('woff'),
+      url('../../public/Fonts/Roper-PressHeavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.counter {
+  color: #BF8525;
+  font-family: 'Roper';
+  font-weight: 700;
+  font-style: normal;
+}

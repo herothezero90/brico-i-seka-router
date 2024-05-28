@@ -1,8 +1,9 @@
-import { Box, Flex, HStack, IconButton, useDisclosure, Stack } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import React from "react";
+import { Box, Flex, HStack, IconButton, useDisclosure, Stack, useColorMode, Avatar} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
 
-const Links = ["About", "Team", "Services", "Gallery"];
+const Links = ["Home", "About", "Team", "Services", "Gallery"];
 
 const NavLink = ({ to, children }) => (
   <RouterLink to={to}>
@@ -14,9 +15,10 @@ const NavLink = ({ to, children }) => (
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg={"gray.100"} px={4}>
+    <Box bgColor={"teal.700"} px={4} py={2}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
           size={"md"}
@@ -26,13 +28,18 @@ const Navbar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={"center"}>
-          <Box>Logo</Box>
+          <Box><Avatar src="Images/Facebook photo.jpg" size="md" /></Box>
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <NavLink key={link} to={`/${link.toLowerCase()}`}>{link}</NavLink>
             ))}
           </HStack>
         </HStack>
+        <IconButton
+          aria-label="Toggle theme"
+          icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+          onClick={toggleColorMode}
+        />
       </Flex>
 
       {isOpen ? (
