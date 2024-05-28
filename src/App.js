@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import theme from "./theme";
 import CenteredContainer from "./components/CenteredContainer";
@@ -18,9 +18,11 @@ const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Router>
+      <Box maxWidth="1200px" mx="auto">
         <Navbar />
         <CenteredContainer>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/team" element={<Team />} />
@@ -29,6 +31,7 @@ const App = () => {
           </Routes>
         </CenteredContainer>
         {showFooter && <Footer />}
+        </Box>
       </Router>
     </ChakraProvider>
   );

@@ -1,13 +1,14 @@
 import React from "react";
-import { Box, Flex, HStack, IconButton, useDisclosure, Stack, useColorMode, Avatar} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Box, Flex, HStack, IconButton, useDisclosure, Stack, Spacer } from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
+import ReserveButton from "./ReserveButton";
 
 const Links = ["Home", "About", "Team", "Services", "Gallery"];
 
 const NavLink = ({ to, children }) => (
   <RouterLink to={to}>
-    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "#1f2e30" }}>
+    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "yellow.500" }}>
       {children}
     </Box>
   </RouterLink>
@@ -15,31 +16,30 @@ const NavLink = ({ to, children }) => (
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box bgColor={"teal.700"} px={4} py={2}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <IconButton
-          size={"md"}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-        />
         <HStack spacing={8} alignItems={"center"}>
-          <Box><Avatar src="Images/Facebook photo.jpg" size="md" /></Box>
+          <IconButton
+            size={"md"}
+            bgColor={"yellow.500"}
+            boxShadow="dark-lg"
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon color='teal.500' />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <NavLink key={link} to={`/${link.toLowerCase()}`}>{link}</NavLink>
             ))}
           </HStack>
         </HStack>
-        <IconButton
-          aria-label="Toggle theme"
-          icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          onClick={toggleColorMode}
-        />
+        <Spacer />
+        <HStack spacing={4}>
+          <ReserveButton />
+        </HStack>
       </Flex>
 
       {isOpen ? (
@@ -48,6 +48,9 @@ const Navbar = () => {
             {Links.map((link) => (
               <NavLink key={link} to={`/${link.toLowerCase()}`}>{link}</NavLink>
             ))}
+            <Box mt={4}>
+              <ReserveButton />
+            </Box>
           </Stack>
         </Box>
       ) : null}

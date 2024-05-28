@@ -4,8 +4,8 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: props.colorMode === "light" ? "teal.700" : "#1f2e30", // Background color
-        color: props.colorMode === "light" ? "#000000" : "#FFFFFF", // Text color
+        bg: props.colorMode === "light" ? "teal.700" : "teal.900",
+        color: props.colorMode === "light" ? "#000000" : "#FFFFFF",
       },
     }),
   },
@@ -22,6 +22,17 @@ const theme = extendTheme({
   fonts: {
     body: "Merriweather, serif",
     heading: "Merriweather, serif",
+  },
+  components: {
+    Button: {
+      sizes: {
+        xl: {
+          h: "80px",
+          fontSize: "xl",
+          px: "80px",
+        },
+      },
+    },
   },
 });
 

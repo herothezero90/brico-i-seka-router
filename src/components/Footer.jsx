@@ -1,15 +1,15 @@
 import React from 'react';
-import { Box, Flex, Link, Icon } from '@chakra-ui/react';
+import { Box, Flex, Link, Icon, Text } from '@chakra-ui/react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const Footer = ({ show }) => {
   return (
     <Box
       as="footer"
-      bg="teal.700"
-      color="white"
+      bg="teal.900"
+      color="yellow.400"
       py={4}
-      position="fixed" // Set position to fixed
+      position="fixed" 
       bottom={0}
       left={0}
       right={0}
@@ -28,36 +28,72 @@ const Footer = ({ show }) => {
           mb={{ base: 4, md: 0 }}
           fontFamily={ "Merriweather, serif"}
         >
-          <h2>KONTAKT</h2>
-          <p>
-            Ul. kralja Zvonimira 26, Velika Gorica<br />
-            <Link href="tel:+385917886920" aria-label="Call barbershop on the phone" color="white">
-              <Icon as={FaPhone} mr={2} />
-              +385 91 788 6920
-            </Link>
-            <br />
-            <Link href="mailto:tomnorsic@gmail.com" color="white">
-              <Icon as={FaEnvelope} mr={2} />
+          <Text 
+            fontSize='md' 
+            color="yellow.400">
+            Kontakt
+          </Text>
+          <Text 
+            fontSize='md' 
+            color="yellow.400">
+            Ul. kralja Zvonimira 26, Velika Gorica
+          </Text>
+          <Link 
+            href="tel:+385917886920" 
+            aria-label="Call barbershop on the phone" 
+            color="yellow.400" 
+            fontSize='md' 
+          >
+              <Icon 
+                color="yellow.400"
+                as={FaPhone} mr={2} 
+              />
+                +385 91 788 6920
+          </Link>
+          <br />
+          <Link 
+          href="mailto:tomnorsic@gmail.com" 
+          aria-label="Email barbershop" 
+          fontSize='md'
+          color="yellow.400"
+          >
+            <Icon as={FaEnvelope} mr={2} />
               tomnorsic@gmail.com
             </Link>
-          </p>
         </Box>
 
         <Box 
-        flexBasis={{ base: '100%', md: 'auto' }} 
-        textAlign="center"
-        fontFamily={ "Merriweather, serif"}
+          flexBasis={{ base: '100%', md: 'auto' }} 
+          textAlign="center"
+          fontFamily={ "Merriweather, serif"}
         >
-          <Link href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7" aria-label="Locate barbershop on google maps" color="white" mr={4}>
+          <Link 
+            href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7" 
+            aria-label="Locate barbershop on google maps" 
+            mr={4}
+            fontSize='md' 
+            color="yellow.400"
+            >
             <Icon as={FaMapMarkerAlt} mr={2} />
-            Locate us
+            Kako do nas
           </Link>
           <Box mt={2}>
-            <Link href="https://www.instagram.com/brico_i_seka/" aria-label="Barbershop Instagram page" color="white" mr={4}>
+            <Link 
+            href="https://www.instagram.com/brico_i_seka/" 
+            aria-label="Barbershop Instagram page" 
+            mr={4}
+            fontSize='md' 
+            color="yellow.400"
+            >
               <Icon as={FaInstagram} mr={2} />
               Instagram
             </Link>
-            <Link href="https://www.facebook.com/BricoiSeka/" aria-label="Barbershop Facebook page" color="white">
+            <Link 
+            href="https://www.facebook.com/BricoiSeka/" 
+            aria-label="Barbershop Facebook page"
+            fontSize='md' 
+            color="yellow.400"
+            >
               <Icon as={FaFacebook} mr={2} />
               Facebook
             </Link>

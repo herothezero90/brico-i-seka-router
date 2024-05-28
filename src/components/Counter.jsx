@@ -15,9 +15,18 @@ const Counter = () => {
   }, [year]);
 
   return (
-    <div className='counter' style={{ fontSize: '4rem', textAlign: 'center', marginTop: '10%' }}>
+    <>
+    <p 
+      className='counter'
+      style={{ fontSize: '2rem', textAlign: 'center' }}>
+      Since
+      </p>
+    <div 
+    className='counter' 
+    style={{ fontSize: '4rem', textAlign: 'center' }}>
       {year}
     </div>
+    </>
   );
 };
 
