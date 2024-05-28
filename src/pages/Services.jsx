@@ -3,7 +3,13 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 
 const Services = () => (
   <Box as="article" className="services" id="services" textAlign="center" px={{ base: 4, md: 8 }} py={{ base: 8, md: 16 }}>
-    <Heading as="h2" mb={8} fontFamily={"Roper"} fontSize={{ base: '2xl', md: '4xl' }} fontWeight="bold" color="teal.700">
+    <Heading 
+    as="h2" 
+    mb={8} 
+    fontFamily={"Roper"} 
+    fontSize={{ base: '2xl', md: '4xl' }} 
+    fontWeight="bold" 
+    color="teal.700">
       USLUGE
     </Heading>
     <Box maxW="xl" mx="auto">
@@ -27,7 +33,7 @@ const Services = () => (
 
 const ServiceGroup = ({ heading, children }) => (
   <Box
-    bg="white"
+    bg="yellow.600"
     shadow="md"
     p={{ base: 4, md: 6 }}
     mb={{ base: 8, md: 16 }}

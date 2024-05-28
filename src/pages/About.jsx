@@ -5,7 +5,7 @@ const About = () => {
   return (
     <Box
       p={4}
-      bgGradient="linear(to-b, yellow.300, yellow.600)"
+      bgColor="yellow.600"
       borderRadius="md"
       maxW={{ base: '90%', md: '80%', lg: '70%' }}
       m="auto"

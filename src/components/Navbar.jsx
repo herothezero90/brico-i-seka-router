@@ -7,7 +7,7 @@ const Links = ["Home", "About", "Team", "Services", "Gallery"];
 
 const NavLink = ({ to, children }) => (
   <RouterLink to={to}>
-    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "gray.200" }}>
+    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "#1f2e30" }}>
       {children}
     </Box>
   </RouterLink>
