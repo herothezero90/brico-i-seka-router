@@ -18,7 +18,7 @@ const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-      <Box maxWidth="1200px" mx="auto">
+      <Box  mx="auto">
         <Navbar />
         <CenteredContainer>
           <Routes>

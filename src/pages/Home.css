@@ -1,9 +1,15 @@
-.main-heading {
-  font-family: 'Roper';
-  font-size: 7rem; 
-  color: rgb(12, 147, 154); 
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Ensure the image doesn't overflow */
 }
 
+.text-container {
+  color: white; /* Adjust text color for better contrast */
+}
+
+/* Adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   .main-heading {
     font-size: 4rem; 
