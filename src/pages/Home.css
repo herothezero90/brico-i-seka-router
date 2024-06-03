@@ -1,15 +1,15 @@
 .home-container {
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 100vh;
-  overflow: hidden; /* Ensure the image doesn't overflow */
+  overflow: hidden;
 }
 
 .text-container {
-  color: white; /* Adjust text color for better contrast */
+  color: white; 
 }
 
-/* Adjustments for smaller screens */
+
 @media screen and (max-width: 768px) {
   .main-heading {
     font-size: 4rem; 
