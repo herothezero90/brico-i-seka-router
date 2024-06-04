@@ -16,11 +16,12 @@ const Team = () => {
         m="auto"
         p={4}
         overflowY="auto"
+        mb={20}
       >
         {teamMembers.map((member, index) => (
           <MotionBox 
             key={index}
-            bg="yellow.600"
+            bg="yellow.500"
             maxW="300px"
             borderWidth="0px"
             borderRadius="lg"

@@ -16,7 +16,7 @@ const Home = () => {
     <Box 
       className="home-container" 
       mt={0}
-      height={{ base: '80vh', md: '100vh' }} // Set height to 80vh on mobile screens and 100vh on larger screens
+      height={{ base: '80vh', md: '100vh' }} 
       overflow="hidden" 
       position="relative"
     >
