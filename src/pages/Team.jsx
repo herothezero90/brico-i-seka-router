@@ -23,22 +23,31 @@ const Team = () => {
             key={index}
             bg="yellow.500"
             maxW="300px"
-            borderWidth="0px"
+            borderWidth="1px"
             borderRadius="lg"
+            borderColor="black"
             overflow="hidden"
-            shadow="md"
+            shadow="lg"
             m={4}
             p={6}
             initial={{ opacity: 0, x: -50 }} 
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 0.5, delay: index * 0.2 }} 
           >
-            <Image src={member.image} alt={member.name} />
-            <Box mt={4}>
+            <Image 
+              src={member.image} 
+              alt={member.name} 
+              borderRadius="full" 
+              boxSize="100px" 
+              objectFit="cover" 
+              mx="auto" 
+              mb={4} 
+            />
+            <Box textAlign="center">
               <Text fontSize="xl" fontWeight="semibold" mb={2}>
                 {member.name}
               </Text>
-              <Text fontSize="sm" color="black.100">
+              <Text fontSize="sm" color="gray.600">
                 {member.description}
               </Text>
             </Box>

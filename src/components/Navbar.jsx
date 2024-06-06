@@ -25,13 +25,14 @@ const Navbar = () => {
 
   return (
     <Box 
-      bgColor={"teal.700"} 
+      bgColor={"teal.800"} 
       color="yellow.500" 
       fontFamily="Roper" 
       px={4} py={2} 
       position="sticky" 
       top={0}
       zIndex={20}
+      borderBottom="2px solid transparent" // Add this line
     >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>

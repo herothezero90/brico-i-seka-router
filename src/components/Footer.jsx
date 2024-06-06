@@ -11,10 +11,8 @@ const Footer = () => {
     const controlFooter = () => {
       if (typeof window !== 'undefined') {
         if (window.scrollY > lastScrollY) {
-          // Scrolling down
           setIsShrunk(true);
         } else {
-          // Scrolling up
           setIsShrunk(false);
         }
         setLastScrollY(window.scrollY);

@@ -1,10 +1,8 @@
 import React from 'react';
 import Counter from '../components/Counter';
 import { Box, Image, Heading } from '@chakra-ui/react';
-import './Home.css';
 
 const Home = () => {
-
   React.useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -13,15 +11,15 @@ const Home = () => {
   }, []);
 
   return (
-    <Box 
-      className="home-container" 
+    <Box
+      width="100vw"
+      height="100vh"
+      overflow="hidden"
       mt={0}
-      height={{ base: '80vh', md: '100vh' }} 
-      overflow="hidden" 
       position="relative"
     >
-      <Image 
-        src='Images/pjenaipivo.png' 
+      <Image
+        src='Images/pjenaipivo.png'
         alt="Brico main image"
         position="absolute"
         top={0}
@@ -30,11 +28,10 @@ const Home = () => {
         height="100%"
         objectFit="cover"
         zIndex={-1}
-        transform={{ base: 'scale(1)', md: 'none' }} 
+        transform={{ base: 'scale(1)', md: 'none' }}
       />
 
-      <Box 
-        className="text-container"
+      <Box
         position="absolute"
         top="50%"
         left="50%"
@@ -42,11 +39,12 @@ const Home = () => {
         p={8}
         borderRadius={8}
         zIndex={1}
-        textAlign="center" 
+        textAlign="center"
+        color="white"
       >
-        <Heading 
-          size="4xl" 
-          mb={4} 
+        <Heading
+          size={{ base: "3xl", md: "4xl" }}  
+          mb={4}
           fontFamily="Roper"
           color="teal.600"
           textAlign="center"
