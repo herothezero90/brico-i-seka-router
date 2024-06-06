@@ -40,7 +40,8 @@ const Footer = () => {
       zIndex={10}
       width="100%"
       transition="all 0.3s"
-    >
+      display={isMobile && isShrunk ? 'none' : 'block'} 
+  >
       <Flex
         justifyContent="space-between"
         alignItems="center"
