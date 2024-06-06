@@ -12,8 +12,8 @@ const Links = [
   { name: "Galerija", path: "gallery" }
 ];
 
-const NavLink = ({ to, children }) => (
-  <RouterLink to={to}>
+const NavLink = ({ to, children, onClick }) => (
+  <RouterLink to={to} onClick={onClick}>
     <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "teal.900" }}>
       {children}
     </Box>
@@ -22,6 +22,10 @@ const NavLink = ({ to, children }) => (
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleCloseMenu = () => {
+    onClose();
+  };
 
   return (
     <Box 
@@ -48,7 +52,7 @@ const Navbar = () => {
           />
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
-              <NavLink key={link.path} to={`/${link.path}`}>{link.name}</NavLink>
+              <NavLink key={link.path} to={`/${link.path}`} onClick={handleCloseMenu}>{link.name}</NavLink>
             ))}
           </HStack>
         </HStack>
@@ -77,7 +81,7 @@ const Navbar = () => {
           <Flex direction="column" align="center" justify="center">
             <Stack as={"nav"} spacing={4} align="center" textAlign="center">
               {Links.map((link) => (
-                <NavLink key={link.path} to={`/${link.path}`}>{link.name}</NavLink>
+                <NavLink key={link.path} to={`/${link.path}`} onClick={handleCloseMenu}>{link.name}</NavLink>
               ))}
               <Box mt={4}>
               </Box>
