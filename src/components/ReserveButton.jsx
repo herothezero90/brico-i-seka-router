@@ -1,25 +1,16 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-import { useSpring, animated } from '@react-spring/web';
+import { motion } from 'framer-motion'; // Import motion from Framer Motion
 
 const ReserveButton = () => {
-  const shakeAnimation = useSpring({
-    from: { transform: 'translateX(0px)' },
-    to: async (next) => {
-      while (true) {
-        await next({ transform: 'translateX(-10px)' });
-        await next({ transform: 'translateX(10px)' });
-        await next({ transform: 'translateX(-10px)' });
-        await next({ transform: 'translateX(10px)' });
-        await next({ transform: 'translateX(0px)' });
-        break; // To prevent infinite loop, remove this if you want continuous shaking
-      }
-    },
-    config: { duration: 100 },
-  });
-
   return (
-    <animated.div style={shakeAnimation}>
+    <motion.div
+      initial={{ x: 0 }} // Initial position
+      animate={{
+        x: [-10, 10, -10, 10, 0], // Define the animation sequence
+      }}
+      transition={{ duration: 0.5 }} // Configure animation duration
+    >
       <Button
         as="a"
         href="https://app.zoyya.com/rndko/1434"
@@ -45,7 +36,7 @@ const ReserveButton = () => {
       >
         Rezerviraj termin
       </Button>
-    </animated.div>
+    </motion.div>
   );
 };
 
