@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Box, Text } from '@chakra-ui/react';
 import './Counter.css';
 
 const Counter = () => {
@@ -9,23 +10,30 @@ const Counter = () => {
     if (year > 1950) {
       const timer = setTimeout(() => {
         setYear(prevYear => prevYear - 1);
-      }, 150); 
+      }, 70); 
       return () => clearTimeout(timer);
     }
   }, [year]);
 
   return (
     <>
-    <p 
-      className='counter'
-      style={{ fontSize: '2rem', textAlign: 'center' }}>
-      Since
-      </p>
-    <div 
-    className='counter' 
-    style={{ fontSize: '4rem', textAlign: 'center' }}>
-      {year}
-    </div>
+      <Text
+        className='counter'
+        fontSize='2rem'
+        textAlign='center'
+        marginTop='10px'
+        textShadow='1px 1px #000000' m='6'
+      >
+        Since
+      </Text>
+      <Box
+        className='counter'
+        fontSize='4rem'
+        textAlign='center'
+        textShadow='1px 1px #000000' m='6'
+      >
+        {year}
+      </Box>
     </>
   );
 };

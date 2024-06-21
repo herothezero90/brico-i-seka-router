@@ -1,19 +1,26 @@
 import React from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-const ServiceGroup = ({ heading, children }) => (
-  <Box
+const MotionBox = motion(Box);
+
+const ServiceGroup = ({ heading, children, index }) => (
+  <MotionBox
     bg="yellow.500"
-    shadow="md"
+    shadow="lg"
+    _hover={{ shadow: '2xl' }}
     p={{ base: 4, md: 6 }}
     mb={{ base: 8, md: 16 }}
     borderRadius="md"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.3 }}  
   >
     <Heading as="h3" mb={4} fontSize={{ base: 'xl', md: '2xl' }} color="teal.500">
       {heading}
     </Heading>
     <Text fontSize={{ base: 'sm', md: 'md' }}>{children}</Text>
-  </Box>
+  </MotionBox>
 );
 
 const Services = () => {
@@ -47,7 +54,7 @@ const Services = () => {
       </Heading>
       <Box maxW="xl" mx="auto">
         {serviceData.map((service, index) => (
-          <ServiceGroup key={index} heading={service.heading}>
+          <ServiceGroup key={index} heading={service.heading} index={index}>
             {service.content}
           </ServiceGroup>
         ))}

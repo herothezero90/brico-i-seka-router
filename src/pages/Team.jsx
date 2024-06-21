@@ -17,22 +17,24 @@ const Team = () => {
         p={4}
         overflowY="auto"
         mb={20}
+        gap={4}
       >
         {teamMembers.map((member, index) => (
           <MotionBox 
             key={index}
             bg="yellow.500"
-            maxW="300px"
+            w={['100%', '45%', '30%']}  
             borderWidth="1px"
             borderRadius="lg"
             borderColor="black"
             overflow="hidden"
-            shadow="lg"
-            m={4}
+            boxShadow="xl" 
+            _hover={{ boxShadow: '2xl' }}  
+            transition={{ duration: 0.5, delay: index * 0.3 }}  
+            m={5} 
             p={6}
             initial={{ opacity: 0, x: -50 }} 
             animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.5, delay: index * 0.2 }} 
           >
             <Image 
               src={member.image} 

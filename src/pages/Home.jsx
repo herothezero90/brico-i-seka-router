@@ -15,10 +15,12 @@ const Home = () => {
       width="100vw"
       height="100vh"
       overflow="hidden"
-      mt={0}
+      mt={-10}
+
       position="relative"
     >
       <Image
+        overflowX="hidden"
         src='Images/pjenaipivo.png'
         alt="Brico main image"
         position="absolute"
@@ -43,11 +45,12 @@ const Home = () => {
         color="white"
       >
         <Heading
-          size={{ base: "3xl", md: "4xl" }}  
+          size={{ base: "4xl", md: "5xl" }}  
           mb={4}
           fontFamily="Roper"
           color="teal.600"
           textAlign="center"
+          textShadow='1px 1px #000000' m='6'
         >
           Brico i Seka
         </Heading>

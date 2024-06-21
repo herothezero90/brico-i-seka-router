@@ -1,15 +1,15 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion'; 
 
 const ReserveButton = () => {
   return (
     <motion.div
-      initial={{ x: 0 }} // Initial position
+      initial={{ x: 0 }} 
       animate={{
-        x: [-10, 10, -10, 10, 0], // Define the animation sequence
+        x: [-10, 10, -10, 10, 0], 
       }}
-      transition={{ duration: 0.5 }} // Configure animation duration
+      transition={{ duration: 3 }} 
     >
       <Button
         as="a"

@@ -36,7 +36,8 @@ const Navbar = () => {
       position="sticky" 
       top={0}
       zIndex={20}
-      borderBottom="2px solid transparent" // Add this line
+      borderBottom="2px solid transparent" 
+      
     >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>
@@ -50,7 +51,10 @@ const Navbar = () => {
             onClick={isOpen ? onClose : onOpen}
             zIndex={30} 
           />
-          <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
+          <HStack 
+            as={"nav"} 
+            spacing={4} 
+            display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <NavLink key={link.path} to={`/${link.path}`} onClick={handleCloseMenu}>{link.name}</NavLink>
             ))}
