@@ -36,7 +36,8 @@ const Navbar = () => {
       position="sticky" 
       top={0}
       zIndex={20}
-      borderBottom="2px solid transparent" // Add this line
+      borderBottom="2px solid transparent" 
+      marginBottom={-10}
     >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>
