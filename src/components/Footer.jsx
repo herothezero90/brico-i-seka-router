@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Flex, Link, Icon, Text, useMediaQuery } from '@chakra-ui/react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom'; // Assuming you are using React Router
 
 const Footer = () => {
   const [isMobile] = useMediaQuery("(max-width: 767px)");
   const [isShrunk, setIsShrunk] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const controlFooter = () => {
@@ -27,11 +29,17 @@ const Footer = () => {
     }
   }, [lastScrollY]);
 
+  // Define routes where the footer should be visible on mobile
+  const isVisibleOnRoute = () => {
+    const visibleRoutes = ['/home', '/gallery']; // Adjust based on your routes
+    return visibleRoutes.includes(location.pathname);
+  };
+
   return (
     <Box
       as="footer"
       bg="teal.900"
-      color="yellow.500"
+      color="orange.200"
       py={isShrunk ? 2 : 4}
       position="fixed"
       bottom={0}
@@ -40,8 +48,8 @@ const Footer = () => {
       zIndex={10}
       width="100%"
       transition="all 0.3s"
-      display={isMobile && isShrunk ? 'none' : 'block'} 
-  >
+      display={isMobile && !isVisibleOnRoute() ? 'none' : 'block'} // Adjust visibility based on route
+    >
       <Flex
         justifyContent="space-between"
         alignItems="center"
@@ -55,15 +63,10 @@ const Footer = () => {
           mb={{ base: 4, md: 0 }}
           fontFamily="Roper"
         >
-          <Text
-            fontSize='md'
-            fontFamily="Roper"
-          >
+          <Text fontSize="md" fontFamily="Roper">
             Kontakt
           </Text>
-          <Text
-            fontSize='md'
-            fontFamily="Roper">
+          <Text fontSize="md" fontFamily="Roper">
             Ul. kralja Zvonimira 26, Velika Gorica
           </Text>
           <Link
@@ -71,9 +74,7 @@ const Footer = () => {
             aria-label="Call barbershop on the phone"
             fontFamily="Roper"
           >
-            <Icon
-              as={FaPhone} mr={2}
-            />
+            <Icon as={FaPhone} mr={2} />
             +385 91 788 6920
           </Link>
           <br />
@@ -96,7 +97,7 @@ const Footer = () => {
             href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7"
             aria-label="Locate barbershop on google maps"
             mr={4}
-            fontSize='md'
+            fontSize="md"
             fontFamily="Roper"
           >
             <Icon as={FaMapMarkerAlt} mr={2} />
@@ -107,7 +108,7 @@ const Footer = () => {
               href="https://www.instagram.com/brico_i_seka/"
               aria-label="Barbershop Instagram page"
               mr={4}
-              fontSize='md'
+              fontSize="md"
               fontFamily="Roper"
             >
               <Icon as={FaInstagram} mr={2} />
@@ -116,7 +117,7 @@ const Footer = () => {
             <Link
               href="https://www.facebook.com/BricoiSeka/"
               aria-label="Barbershop Facebook page"
-              fontSize='md'
+              fontSize="md"
               fontFamily="Roper"
             >
               <Icon as={FaFacebook} mr={2} />
@@ -137,32 +138,42 @@ const Footer = () => {
       >
         <Link href="tel:+385917886920" aria-label="Call barbershop">
           <Flex flexDirection="column" alignItems="center">
-            <Icon as={FaPhone} boxSize={6} color="yellow.500" />
-            <Text fontSize="xs" color="yellow.500" mt={1} fontFamily="Roper">Poziv</Text>
+            <Icon as={FaPhone} boxSize={6} color="orange.200" />
+            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+              Poziv
+            </Text>
           </Flex>
         </Link>
         <Link href="mailto:tomnorsic@gmail.com" aria-label="Email barbershop">
           <Flex flexDirection="column" alignItems="center">
-            <Icon as={FaEnvelope} boxSize={6} color="yellow.500" />
-            <Text fontSize="xs" color="yellow.500" mt={1} fontFamily="Roper">Mail</Text>
+            <Icon as={FaEnvelope} boxSize={6} color="orange.200" />
+            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+              Mail
+            </Text>
           </Flex>
         </Link>
         <Link href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7" aria-label="Locate barbershop">
           <Flex flexDirection="column" alignItems="center">
-            <Icon as={FaMapMarkerAlt} boxSize={6} color="yellow.500" />
-            <Text fontSize="xs" color="yellow.500" mt={1} fontFamily="Roper">Mapa</Text>
+            <Icon as={FaMapMarkerAlt} boxSize={6} color="orange.200" />
+            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+              Mapa
+            </Text>
           </Flex>
         </Link>
         <Link href="https://www.instagram.com/brico_i_seka/" aria-label="Barbershop Instagram page">
           <Flex flexDirection="column" alignItems="center">
-            <Icon as={FaInstagram} boxSize={6} color="yellow.500" />
-            <Text fontSize="xs" color="yellow.500" mt={1} fontFamily="Roper">IG</Text>
+            <Icon as={FaInstagram} boxSize={6} color="orange.200" />
+            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+              IG
+            </Text>
           </Flex>
         </Link>
         <Link href="https://www.facebook.com/BricoiSeka/" aria-label="Barbershop Facebook page">
           <Flex flexDirection="column" alignItems="center">
-            <Icon as={FaFacebook} boxSize={6} color="yellow.500" />
-            <Text fontSize="xs" color="yellow.500" mt={1} fontFamily="Roper">FB</Text>
+            <Icon as={FaFacebook} boxSize={6} color="orange.200" />
+            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+              FB
+            </Text>
           </Flex>
         </Link>
       </Flex>

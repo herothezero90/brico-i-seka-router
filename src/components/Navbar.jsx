@@ -9,7 +9,8 @@ const Links = [
   { name: "O nama", path: "about" },
   { name: "Tim", path: "team" },
   { name: "Usluge", path: "services" },
-  { name: "Galerija", path: "gallery" }
+  { name: "Galerija", path: "gallery" },
+  { name: "Kontakt", path: "contact" }
 ];
 
 const NavLink = ({ to, children, onClick }) => (
@@ -30,7 +31,7 @@ const Navbar = () => {
   return (
     <Box 
       bgColor={"teal.800"} 
-      color="yellow.500" 
+      color="orange.200" 
       fontFamily="Roper" 
       px={4} py={2} 
       position="sticky" 
@@ -43,7 +44,7 @@ const Navbar = () => {
         <HStack spacing={8} alignItems={"center"}>
           <IconButton
             size={"md"}
-            bgColor={"yellow.500"}
+            bgColor={"orange.200"}
             boxShadow="dark-lg"
             icon={isOpen ? <CloseIcon color='teal.500'/> : <HamburgerIcon color='teal.500' />}
             aria-label={"Open Menu"}
@@ -73,7 +74,7 @@ const Navbar = () => {
           paddingStart={5}
           paddingEnd={5}
           margin={2}
-          bgColor={"yellow.500"}
+          bgColor={"orange.200"}
           color={"teal.800"}
           zIndex={20} 
           pt={16}

@@ -65,7 +65,7 @@ const About = () => {
       </MotionHeading>
       <Box
         p={4}
-        color="yellow.500"
+        color="orange.200"
         fontFamily="Merriweather"
         textAlign="justify"
         maxWidth="800px"

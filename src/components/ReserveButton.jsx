@@ -22,13 +22,13 @@ const ReserveButton = () => {
         mt={10}
         mb={10}
         _hover={{
-          bgGradient: 'linear(to-r, #a07400, #926800)',
+          bgColor: 'orange.200',
         }}
         _active={{
-          bgGradient: 'linear(to-r, #a07400, #926800)',
+          bgColor: 'orange.200',
           transform: 'translateY(1px)',
         }}
-        bgGradient="linear(to-r, #cc9a00, #bf8c00)"
+        bgColor='orange.200'
         boxShadow='dark-lg'
         fontFamily="Roper"
         borderWidth="1px"

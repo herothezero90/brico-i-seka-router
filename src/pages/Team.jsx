@@ -21,7 +21,7 @@ const Team = () => {
         {teamMembers.map((member, index) => (
           <MotionBox 
             key={index}
-            bg="yellow.500"
+            bg="orange.200"
             maxW="300px"
             borderWidth="1px"
             borderRadius="lg"

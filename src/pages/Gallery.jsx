@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Grid, Image, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, IconButton, Center } from '@chakra-ui/react';
+import { Box, Grid, Image, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, IconButton, Center, Skeleton } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
 
 const Gallery = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
   const images = [
     'Images/pjenaipivo.png',
     'Images/Brico i Seka 1.jpg',
@@ -19,6 +20,9 @@ const Gallery = () => {
     'Images/pjenaipivo.png',
     'Images/Brico i Seka 1.jpg',
   ];
+
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [loadedImages, setLoadedImages] = useState(Array(images.length).fill(false));
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
@@ -36,22 +40,32 @@ const Gallery = () => {
     setSelectedImageIndex((prevIndex) => (prevIndex < images.length - 1 ? prevIndex + 1 : 0));
   };
 
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => {
+      const newLoadedImages = [...prev];
+      newLoadedImages[index] = true;
+      return newLoadedImages;
+    });
+  };
+
   return (
-    <Box 
-      p={4}
-      mt={10}>
+    <Box p={4} mt={10}>
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
         gap={4}
       >
         {images.map((imageUrl, index) => (
-          <Box
+          <MotionBox
             key={index}
             position="relative"
             _hover={{ transform: 'scale(1.05)', transition: 'transform 0.3s ease' }}
             onClick={() => handleImageClick(index)}
             cursor="pointer"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: loadedImages[index] ? 1 : 0, y: loadedImages[index] ? 0 : 50 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
+            {!loadedImages[index] && <Skeleton height="150px" />}
             <Image
               src={imageUrl}
               alt={`Image ${index + 1}`}
@@ -59,19 +73,16 @@ const Gallery = () => {
               width="100%"
               height="150px"
               objectFit="cover"
+              onLoad={() => handleImageLoad(index)}
+              style={{ display: loadedImages[index] ? 'block' : 'none' }}
             />
-          </Box>
+          </MotionBox>
         ))}
       </Grid>
 
-      <Modal 
-        isOpen={selectedImageIndex !== null} 
-        onClose={handleCloseModal} 
-        isCentered size="xxl"
-        >
+      <Modal isOpen={selectedImageIndex !== null} onClose={handleCloseModal} isCentered size="xxl">
         <ModalOverlay />
-        <ModalContent
-          bg="teal.700">
+        <ModalContent bg="teal.700">
           <ModalCloseButton />
           <ModalBody display="flex" justifyContent="center" alignItems="center">
             {selectedImageIndex !== null && (
