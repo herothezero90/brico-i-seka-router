@@ -29,9 +29,8 @@ const Footer = () => {
     }
   }, [lastScrollY]);
 
-  // Define routes where the footer should be visible on mobile
   const isVisibleOnRoute = () => {
-    const visibleRoutes = ['/home', '/gallery']; // Adjust based on your routes
+    const visibleRoutes = ['/home', '/gallery'];
     return visibleRoutes.includes(location.pathname);
   };
 
