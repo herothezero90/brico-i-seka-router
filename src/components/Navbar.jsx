@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Flex, HStack, IconButton, useDisclosure, Stack, Spacer } from "@chakra-ui/react";
+import { Box, Flex, HStack, useDisclosure, Stack, Spacer, IconButton } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import ReserveButton from "./ReserveButton";
 
 const Links = [
@@ -21,11 +22,16 @@ const NavLink = ({ to, children, onClick }) => (
   </RouterLink>
 );
 
+const MotionIconButton = motion(IconButton);
+
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const handleCloseMenu = () => {
-    onClose();
+  const handleMenuToggle = () => {
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
   };
 
   return (
@@ -42,19 +48,24 @@ const Navbar = () => {
     >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={8} alignItems={"center"}>
-          <IconButton
+          <MotionIconButton
             size={"md"}
             bgColor={"orange.200"}
             boxShadow="dark-lg"
-            icon={isOpen ? <CloseIcon color='teal.500'/> : <HamburgerIcon color='teal.500' />}
+            icon={isOpen ? <CloseIcon color='black' /> : <HamburgerIcon color='teal.500' />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-            zIndex={30} 
+            onClick={handleMenuToggle}
+            zIndex={30}
+            _hover={{ bgColor: "orange.300" }}
+            _active={{ bgColor: "orange.200" }}
+            as={motion.button}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           />
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
-              <NavLink key={link.path} to={`/${link.path}`} onClick={handleCloseMenu}>{link.name}</NavLink>
+              <NavLink key={link.path} to={`/${link.path}`} onClick={handleMenuToggle}>{link.name}</NavLink>
             ))}
           </HStack>
         </HStack>
@@ -75,7 +86,7 @@ const Navbar = () => {
           paddingEnd={5}
           margin={2}
           bgColor={"orange.200"}
-          color={"teal.800"}
+          color={"teal.900"}
           zIndex={20} 
           pt={16}
           borderRadius={5} 
@@ -83,7 +94,7 @@ const Navbar = () => {
           <Flex direction="column" align="center" justify="center">
             <Stack as={"nav"} spacing={4} align="center" textAlign="center">
               {Links.map((link) => (
-                <NavLink key={link.path} to={`/${link.path}`} onClick={handleCloseMenu}>{link.name}</NavLink>
+                <NavLink key={link.path} to={`/${link.path}`} onClick={handleMenuToggle}>{link.name}</NavLink>
               ))}
               <Box mt={4}>
               </Box>

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Box, Text, Heading, Grid } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const MotionHeading = motion(Heading);
 const MotionBox = motion(Box);
 
-const ImageGallery = React.memo(({ images }) =>  {
+const ImageGallery = React.memo(({ images }) => {
   return (
     <Grid
       templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }}
@@ -24,7 +23,7 @@ const ImageGallery = React.memo(({ images }) =>  {
           paddingBottom="75%" 
           mb={10} 
         >
-          <LazyLoadImage
+          <img
             src={image.src}
             alt={image.alt}
             style={{
@@ -66,7 +65,7 @@ const About = () => {
       <Box
         p={4}
         color="orange.200"
-        fontFamily="Merriweather"
+        fontFamily="sans-serif"
         textAlign="justify"
         maxWidth="800px"
         mx="auto"
@@ -78,7 +77,7 @@ const About = () => {
         </Text>
       </Box>
       <ImageGallery images={images} />
-      <Box mb={20} /> {/* Additional margin to prevent the footer from hiding the images */}
+      <Box /> 
     </Box>
   );
 };

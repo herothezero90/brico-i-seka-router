@@ -93,7 +93,7 @@ const Gallery = () => {
                   variant="solid"
                   aria-label="Previous Image"
                   mr={2}
-                  zIndex={2}
+                  zindex={2}
                   bg="teal.700"
                   _hover={{ bg: "teal.500" }}
                 />
@@ -106,7 +106,7 @@ const Gallery = () => {
                   variant="solid"
                   aria-label="Next Image"
                   ml={2}
-                  zIndex={2}
+                  zindex={2}
                   bg="teal.700"
                   _hover={{ bg: "teal.500" }}
                 />

@@ -10,7 +10,8 @@ import Team from './pages/Team';
 import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Footer from './components/Footer';
-import Contact from './components/Contact'; // Import Contact component
+import Contact from './pages/Contact'; 
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Box mx="auto">
           <Navbar />
           <CenteredContainer>
@@ -29,7 +31,7 @@ const App = () => {
               <Route path="/team" element={<Team />} />
               <Route path="/services" element={<Services />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/contact" element={<Contact />} /> {/* New route for Contact */}
+              <Route path="/contact" element={<Contact />} /> 
             </Routes>
           </CenteredContainer>
           {showFooter && <Footer />}
