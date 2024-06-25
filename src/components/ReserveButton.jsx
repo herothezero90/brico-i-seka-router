@@ -30,7 +30,7 @@ const ReserveButton = () => {
         }}
         bgColor='orange.200'
         boxShadow='dark-lg'
-        fontFamily="Roper"
+        fontFamily="Montserrat" 
         borderWidth="1px"
         transition="transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out"
       >

@@ -13,6 +13,12 @@ import Footer from './components/Footer';
 import Contact from './pages/Contact'; 
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/montserrat/900.css';
 
 const App = () => {
   const [showFooter] = useState(true);

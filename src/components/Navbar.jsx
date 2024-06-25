@@ -6,17 +6,16 @@ import { motion } from "framer-motion";
 import ReserveButton from "./ReserveButton";
 
 const Links = [
-  { name: "Pocetna", path: "home" },
-  { name: "O nama", path: "about" },
-  { name: "Tim", path: "team" },
-  { name: "Usluge", path: "services" },
-  { name: "Galerija", path: "gallery" },
-  { name: "Kontakt", path: "contact" }
+  { name: "POČETNA", path: "home" },
+  { name: "O NAMA", path: "about" },
+  { name: "TEAM", path: "team" },
+  { name: "USLUGE", path: "services" },
+  { name: "GALERIJA", path: "gallery" },
 ];
 
 const NavLink = ({ to, children, onClick }) => (
   <RouterLink to={to} onClick={onClick}>
-    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "teal.900" }}>
+    <Box px={2} py={1} rounded={"md"} _hover={{ textDecoration: "none", bg: "teal.500" }} fontFamily="Montserrat">
       {children}
     </Box>
   </RouterLink>
@@ -38,7 +37,8 @@ const Navbar = () => {
     <Box 
       bgColor={"teal.800"} 
       color="orange.200" 
-      fontFamily="Roper" 
+      fontFamily="Montserrat"
+      fontWeight={'800'}
       px={4} py={2} 
       position="sticky" 
       top={0}
@@ -96,6 +96,7 @@ const Navbar = () => {
               {Links.map((link) => (
                 <NavLink key={link.path} to={`/${link.path}`} onClick={handleMenuToggle}>{link.name}</NavLink>
               ))}
+              <NavLink key="contact" to="/contact" onClick={handleMenuToggle}>KONTAKT</NavLink>
               <Box mt={4}>
               </Box>
             </Stack>

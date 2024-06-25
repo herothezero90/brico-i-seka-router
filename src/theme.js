@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import '@fontsource-variable/montserrat';
 
 const theme = extendTheme({
   styles: {
@@ -20,8 +21,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "Merriweather, serif",
-    heading: "Merriweather, serif",
+    body: `'Monserrat Variable', sans-serif`,
+    heading: `'Monserrat Variable', sans-serif`,
   },
   components: {
     Button: {

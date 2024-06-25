@@ -47,7 +47,8 @@ const Footer = () => {
       zIndex={10}
       width="100%"
       transition="all 0.3s"
-      display={isMobile && !isVisibleOnRoute() ? 'none' : 'block'} // Adjust visibility based on route
+      display={isMobile && !isVisibleOnRoute() ? 'none' : 'block'}
+      fontFamily="Montserrat" 
     >
       <Flex
         justifyContent="space-between"
@@ -60,18 +61,16 @@ const Footer = () => {
           flexBasis={{ base: '100%', md: 'auto' }}
           textAlign={{ base: 'center', md: 'left' }}
           mb={{ base: 4, md: 0 }}
-          fontFamily="Roper"
         >
-          <Text fontSize="md" fontFamily="Roper">
+          <Text fontSize="md">
             Kontakt
           </Text>
-          <Text fontSize="md" fontFamily="Roper">
+          <Text fontSize="md">
             Ul. kralja Zvonimira 26, Velika Gorica
           </Text>
           <Link
             href="tel:+385917886920"
             aria-label="Call barbershop on the phone"
-            fontFamily="Roper"
           >
             <Icon as={FaPhone} mr={2} />
             +385 91 788 6920
@@ -80,7 +79,6 @@ const Footer = () => {
           <Link
             href="mailto:tomnorsic@gmail.com"
             aria-label="Email barbershop"
-            fontFamily="Roper"
           >
             <Icon as={FaEnvelope} mr={2} />
             tomnorsic@gmail.com
@@ -90,14 +88,12 @@ const Footer = () => {
         <Box
           flexBasis={{ base: '100%', md: 'auto' }}
           textAlign="center"
-          fontFamily="Merriweather, serif"
         >
           <Link
             href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7"
             aria-label="Locate barbershop on google maps"
             mr={4}
             fontSize="md"
-            fontFamily="Roper"
           >
             <Icon as={FaMapMarkerAlt} mr={2} />
             Kako do nas
@@ -108,7 +104,6 @@ const Footer = () => {
               aria-label="Barbershop Instagram page"
               mr={4}
               fontSize="md"
-              fontFamily="Roper"
             >
               <Icon as={FaInstagram} mr={2} />
               Instagram
@@ -117,7 +112,6 @@ const Footer = () => {
               href="https://www.facebook.com/BricoiSeka/"
               aria-label="Barbershop Facebook page"
               fontSize="md"
-              fontFamily="Roper"
             >
               <Icon as={FaFacebook} mr={2} />
               Facebook
@@ -138,7 +132,7 @@ const Footer = () => {
         <Link href="tel:+385917886920" aria-label="Call barbershop">
           <Flex flexDirection="column" alignItems="center">
             <Icon as={FaPhone} boxSize={6} color="orange.200" />
-            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+            <Text fontSize="xs" color="orange.200" mt={1}>
               Poziv
             </Text>
           </Flex>
@@ -146,7 +140,7 @@ const Footer = () => {
         <Link href="mailto:tomnorsic@gmail.com" aria-label="Email barbershop">
           <Flex flexDirection="column" alignItems="center">
             <Icon as={FaEnvelope} boxSize={6} color="orange.200" />
-            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+            <Text fontSize="xs" color="orange.200" mt={1}>
               Mail
             </Text>
           </Flex>
@@ -154,7 +148,7 @@ const Footer = () => {
         <Link href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7" aria-label="Locate barbershop">
           <Flex flexDirection="column" alignItems="center">
             <Icon as={FaMapMarkerAlt} boxSize={6} color="orange.200" />
-            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+            <Text fontSize="xs" color="orange.200" mt={1}>
               Mapa
             </Text>
           </Flex>
@@ -162,7 +156,7 @@ const Footer = () => {
         <Link href="https://www.instagram.com/brico_i_seka/" aria-label="Barbershop Instagram page">
           <Flex flexDirection="column" alignItems="center">
             <Icon as={FaInstagram} boxSize={6} color="orange.200" />
-            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+            <Text fontSize="xs" color="orange.200" mt={1}>
               IG
             </Text>
           </Flex>
@@ -170,7 +164,7 @@ const Footer = () => {
         <Link href="https://www.facebook.com/BricoiSeka/" aria-label="Barbershop Facebook page">
           <Flex flexDirection="column" alignItems="center">
             <Icon as={FaFacebook} boxSize={6} color="orange.200" />
-            <Text fontSize="xs" color="orange.200" mt={1} fontFamily="Roper">
+            <Text fontSize="xs" color="orange.200" mt={1}>
               FB
             </Text>
           </Flex>

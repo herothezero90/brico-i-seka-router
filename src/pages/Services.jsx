@@ -15,11 +15,14 @@ const ServiceGroup = ({ heading, children, index }) => (
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: index * 0.3 }}  
+    fontFamily="Montserrat" 
   >
-    <Heading as="h3" mb={4} fontSize={{ base: 'xl', md: '2xl' }} color="teal.500">
+    <Heading as="h3" mb={4} fontSize={{ base: 'xl', md: '2xl' }} color="teal.500" fontFamily="Montserrat">
       {heading}
     </Heading>
-    <Text fontSize={{ base: 'sm', md: 'md' }}>{children}</Text>
+    <Text fontSize={{ base: 'sm', md: 'md' }} fontFamily="Montserrat">
+      {children}
+    </Text>
   </MotionBox>
 );
 
@@ -48,8 +51,8 @@ const Services = () => {
   ];
 
   return (
-    <Box as="article" className="services" id="services" textAlign="center" px={{ base: 4, md: 8 }} py={{ base: 8, md: 16 }}>
-      <Heading mb={10} fontFamily="Roper" fontSize={{ base: '4xl', md: '6xl' }} fontWeight="bold" color="orange.200">
+    <Box as="article" className="services" id="services" textAlign="center" px={{ base: 4, md: 8 }} py={{ base: 8, md: 16 }} fontFamily="Montserrat">
+      <Heading mb={10} fontFamily="Montserrat" fontSize={{ base: '4xl', md: '6xl' }} fontWeight="bold" color="orange.200">
         USLUGE
       </Heading>
       <Box maxW="xl" mx="auto">

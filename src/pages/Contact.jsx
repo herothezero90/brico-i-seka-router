@@ -3,6 +3,11 @@ import { Flex, Link, Icon, Text, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaFacebook } from 'react-icons/fa';
 
+const MotionImage = motion(Image);
+const MotionFlex = motion(Flex);
+const MotionText = motion(Text);
+const MotionLink = motion(Link);
+
 const Contact = () => {
   return (
     <Flex
@@ -13,9 +18,9 @@ const Contact = () => {
       textAlign="center"
       px={4}
       overflow="hidden"
+      fontFamily="Montserrat" 
     >
-      <Image
-        as={motion.img}
+      <MotionImage
         src="Images/salon2.jpeg"
         alt="Brico i Seka Logo"
         mb={4}
@@ -26,78 +31,72 @@ const Contact = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
       />
-      <Flex
-        as={motion.div}
+      <MotionFlex
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
         flexDirection="column"
         alignItems="center"
       >
-        <Text fontSize="4xl" fontFamily="Roper" mb={4} color="orange.300">
-          Brico i seka
-        </Text>
-        <Text fontSize="lg" fontFamily="Roper" mb={4} color="orange.200">
+        <MotionText fontSize="4xl" mb={4} color="orange.300" fontWeight="bold">
+          BRICO I SEKA
+        </MotionText>
+        <MotionText fontSize="lg" mb={4} color="orange.200">
           Ul. kralja Zvonimira 26,
           <br /> Velika Gorica
-        </Text>
-        <Link
+        </MotionText>
+        <MotionLink
           href="https://maps.app.goo.gl/HqGnNuu93wkYoiTo7"
           aria-label="Locate barbershop on google maps"
-          fontFamily="Roper"
           display="block"
           mb={4}
           color="orange.200"
         >
           <Icon as={FaMapMarkerAlt} mr={2} color="black" />
-          Find us
-        </Link>
-        <Link
+          Kako do nas
+        </MotionLink>
+        <MotionLink
           href="tel:+385917886920"
           aria-label="Call barbershop"
-          fontFamily="Roper"
           display="block"
           mb={4}
           color="orange.200"
         >
           <Icon as={FaPhone} mr={2} color="black" />
           +385 91 788 6920
-        </Link>
-        <Link
+        </MotionLink>
+        <MotionLink
           href="mailto:tomnorsic@gmail.com"
           aria-label="Email barbershop"
-          fontFamily="Roper"
           display="block"
           mb={4}
           color="orange.200"
         >
           <Icon as={FaEnvelope} mr={2} color="black"/>
           tomnorsic@gmail.com
-        </Link>
+        </MotionLink>
         <Flex justifyContent="center" alignItems="center">
-          <Link
+          <MotionLink
             href="https://www.instagram.com/brico_i_seka/"
             aria-label="Barbershop Instagram page"
             mr={4}
             fontSize="md"
-            fontFamily="Roper"
             color="orange.200"
           >
             <Icon as={FaInstagram} mr={2} color="black"/>
             Instagram
-          </Link>
-          <Link
+          </MotionLink>
+          <MotionLink
             href="https://www.facebook.com/BricoiSeka/"
             aria-label="Barbershop Facebook page"
             fontSize="md"
-            fontFamily="Roper"
             color="orange.200"
           >
             <Icon as={FaFacebook} mr={2} color="black"/>
             Facebook
-          </Link>
+          </MotionLink>
         </Flex>
-      </Flex>
+      </MotionFlex>
     </Flex>
   );
 };

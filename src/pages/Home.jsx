@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -16,6 +16,7 @@ const Home = () => {
       height="100vh"
       overflow="hidden"
       position="relative"
+      maxWidth={'2000px'}
     >
       {/* Background image */}
       <motion.div
@@ -33,40 +34,47 @@ const Home = () => {
           zIndex: -1,
         }}
       />
-      <Box
+      <Flex
         position="relative"
-        display="flex"
-        flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="90vh"
+        // height="85%"
+        height={{base: '85%', lg: '85%'}}
         zIndex={1}
-        textAlign="center"
-        color="white"
       >
-        {/* First Image */}
-        <motion.img
-          src="Images/brico_i_seka_cropped.png"
-          alt="First Image"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3, delay: 0.5 }} 
-          width={{ base: '100%', sm: '100%', md: '50%', lg: '40%' }}
-          mb={4}
-          zIndex={10}
-        />
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          width={{sm: '100%', base: '100%', lg: '43%' }}
+          textAlign="center"
+          color="white"
+          p={{ base: '2', md: '2' }}
+          mb={{lg: '1'}}
+        >
+          {/* Brico i seka logo */}
+          <motion.img
+            src="Images/brico_i_seka_cropped.png"
+            alt="Brico logo"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3, delay: 0.5 }} 
+            mb={4}
+            zIndex={10}
+          />
 
-        {/* Second Image */}
-        <motion.img
-          src="Images/framed_image_2.png"
-          alt="Second Image"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3, delay: 0.5 }} 
-          width={{ base: '100%', sm: '100%', md: '50%', lg: '40%' }}
-          zIndex={5}
-        />
-      </Box>
+          {/* Framed images */}
+          <motion.img
+            src="Images/framed_image_2.png"
+            alt="Framed images"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3, delay: 0.5 }} 
+            zIndex={5}
+          />
+        </Box>
+      </Flex>
     </Box>
   );
 };

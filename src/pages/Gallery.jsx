@@ -10,15 +10,23 @@ const Gallery = () => {
     'Images/pjenaipivo.png',
     'Images/Brico i Seka 1.jpg',
     'Images/Brico i Seka 1.jpg',
+    'Images/salon4.png',
     'Images/salon2.png',
-    'Images/salon2.png',
-    'Images/salon2.png',
+    'Images/salon4.png',
     'Images/pjenaipivo.png',
     'Images/Brico i Seka 1.jpg',
     'Images/pjenaipivo.png',
     'Images/salon2.png',
     'Images/pjenaipivo.png',
     'Images/Brico i Seka 1.jpg',
+    'Images/salon2.png',
+    'Images/salon2.png',
+    'Images/salon4.png',
+    'Images/salon2.png',
+    'Images/pjenaipivo.png',
+    'Images/salon2.png',
+    'Images/pjenaipivo.png',
+    'Images/salon4.png',
   ];
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -49,7 +57,7 @@ const Gallery = () => {
   };
 
   return (
-    <Box p={4} mt={10}>
+    <Box p={4} mt={10} maxWidth={'1500px'}>
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
         gap={4}
@@ -83,7 +91,9 @@ const Gallery = () => {
       <Modal isOpen={selectedImageIndex !== null} onClose={handleCloseModal} isCentered size="xxl">
         <ModalOverlay />
         <ModalContent bg="teal.700">
-          <ModalCloseButton />
+          <ModalCloseButton
+            _hover={{ bg: "teal.500" }}
+          />
           <ModalBody display="flex" justifyContent="center" alignItems="center">
             {selectedImageIndex !== null && (
               <Center position="relative">
