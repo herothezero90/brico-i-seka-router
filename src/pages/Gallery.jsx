@@ -57,7 +57,7 @@ const Gallery = () => {
   };
 
   return (
-    <Box p={4} mt={10} maxWidth={'1500px'}>
+    <Box p={4} mt={10} maxWidth={'1500px'} pb="150px">
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
         gap={4}

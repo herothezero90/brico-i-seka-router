@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Text, Heading, Grid } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
+
 const MotionHeading = motion(Heading);
 const MotionBox = motion(Box);
 const MotionImage = motion.img;
@@ -34,12 +35,12 @@ const ImageGallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover'
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
             }}
           />
         </MotionBox>
@@ -50,7 +51,7 @@ const ImageGallery = () => {
 
 const About = () => {
   return (
-    <Box minHeight="100vh" overflowY="auto" display="flex" flexDirection="column">
+    <Box minHeight="100vh" overflowY="auto" display="flex" flexDirection="column" pb="80px"> {/* Add padding-bottom to prevent content overlap */}
       <Box p={5} mt={2} fontFamily="Montserrat" mx="auto" flex="1"> 
         <MotionHeading
           size="4xl"
@@ -86,6 +87,7 @@ const About = () => {
           my={5}
         />
       </Box>
+
     </Box>
   );
 };
